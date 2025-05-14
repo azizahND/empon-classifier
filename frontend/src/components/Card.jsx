@@ -1,16 +1,16 @@
 import Button from "./Button";
 
-const Card = ({ deskripsi, gambar }) => {
+const Card = ({ deskripsi, gambar, label }) => {
   return (
-    <div className="flex flex-col bg-white border border-gray-200 shadow-2xs rounded-xl">
+    <div className="flex flex-col bg-white border outline-6 outline-sky-500 shadow-2xs rounded-xl w-[300px] transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 border border-4 border-green-200">
       <div className="p-4 md:p-5">
         <h3 className="text-lg font-bold text-gray-800">
-          <img src={gambar} alt="Gambar" className="w-full rounded-xl" /> {/* Render gambar */}
+          <img src={gambar} alt="Gambar" className="w-full rounded-xl" /> 
         </h3>
-        <div className="mt-2">
-          <Button /> 
+        <div className="mt-4 flex justify-center">
+          <Button label={label} /> 
         </div>
-        <p className="mt-2 text-gray-500">
+        <p className="mt-3 text-gray-500">
           {deskripsi} 
         </p>
       </div>

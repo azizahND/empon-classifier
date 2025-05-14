@@ -10,7 +10,7 @@ const Navs = () => {
   ];
 
   return (
-    <div className="absolute top-0 w-full bg-transparent z-50 px-10">
+    <div className="max-w-[100rem] mx-auto absolute top-0 w-full bg-transparent z-50 px-10">
       <nav className="flex items-center justify-between py-4">
         <div className="mr-auto">
           <img src={Logo} alt="Logo" className="h-15 w-auto" link= "/" />
@@ -24,7 +24,7 @@ const Navs = () => {
               onClick={() => setActive(menu.name)}
               className={`border-b-2 text-md transition duration-200
                 ${active === menu.name
-                  ? 'border-orange-500 text-orange-600 font-bold'
+                  ? 'border-orange-500 text-orange-700 font-bold'
                   : 'border-transparent text-black hover:text-orange-600'}
               `}
             >
