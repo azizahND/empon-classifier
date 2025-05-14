@@ -4,16 +4,15 @@ import axios from 'axios';
 function Predict() {
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState('');
-  const [imagePreview, setImagePreview] = useState(null); // Menyimpan preview gambar
+  const [imagePreview, setImagePreview] = useState(null); 
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     setImage(file);
 
-    // Membuat URL sementara untuk menampilkan gambar
     const reader = new FileReader();
     reader.onloadend = () => {
-      setImagePreview(reader.result); // Menyimpan URL gambar yang akan ditampilkan
+      setImagePreview(reader.result); 
     };
     if (file) {
       reader.readAsDataURL(file);
@@ -38,7 +37,6 @@ function Predict() {
       
       <input type="file" onChange={handleImageChange} />
       
-      {/* Menampilkan preview gambar jika sudah ada */}
       {imagePreview && (
         <div style={{ marginTop: 20 }}>
           <h3>Gambar yang diunggah:</h3>
