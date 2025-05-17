@@ -6,12 +6,12 @@ const Navs = () => {
   const menus = [
     { name: 'Beranda', link: '/' },
     { name: 'Deteksi', link: '/deteksi' },
-    { name: 'About Us', link: '/about-us' }
+    { name: 'About Us', link: '/about' }
   ];
 
   return (
-    <div className="max-w-[100rem] mx-auto absolute top-0 w-full bg-transparent z-50 px-10">
-      <nav className="flex items-center justify-between py-4">
+    <div className="max-w-[100rem]  absolute top-0 w-full bg-transparent z-50 px-10">
+      <nav className="flex items-center justify-between py-4 mr-10">
         <div className="mr-auto">
           <img src={Logo} alt="Logo" className="h-15 w-auto" link= "/" />
         </div>
