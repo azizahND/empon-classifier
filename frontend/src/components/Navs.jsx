@@ -6,7 +6,7 @@ const Navs = () => {
   const menus = [
     { name: 'Beranda', link: '/' },
     { name: 'Deteksi', link: '/deteksi' },
-    { name: 'About Us', link: '/about-us' }
+    { name: 'About Us', link: '/about' }
   ];
 
   return (

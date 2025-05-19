@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from '../layout/Header';
 import Navs from '../components/Navs';
+import Button from '../components/Button';
 
 function Predict() {
   const [image, setImage] = useState(null);
@@ -44,6 +45,13 @@ function Predict() {
 
     <div className="">
       <Header/>
+    </div>
+
+    <div className="container mx-auto justify-items-center border-3 border-gray-200 ">
+      <div className="">
+
+      </div>
+      <Button variant='brown' label="Pilih File"/>
     </div>
 
 

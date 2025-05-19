@@ -17,13 +17,13 @@ import Maskot from '../assets/maskot.png'
 function Landing () {
     return (
     <>
-    <div className="max-w-[95rem] mx-auto">
+    <div className="max-w-[100rem] mx-auto">
         <Navs/>
     </div>
 
    <section id="beranda" className='max-w-[100rem] mx-auto relative w-full  bg-gradient-to-t from-greenDark to-whitemilk bg-opacity-80 text-white'>
     <div className="text-center pt-20">
-        <h1 className='text-5xl font-bold font-mono text-greenDark text-shadow-md mt-10 z-20'>
+        <h1 className='text-5xl font-bold font-mono text-greenDark text-shadow-md mt-10 z-10'>
         Yuk, Kenali <span className='text-white bg-greenDark p-2 '>Empon-Empon</span> Lewat Upload!
         </h1>
         <h2 className='text-greenDark text-2xl mt-4 italic'>
@@ -88,8 +88,8 @@ function Landing () {
         </div>
     </section>
 
-    <section id="footer" className='h-[30rem]  max-w-[100rem] mx-auto  '>
-        <div className="mx-auto max-w-[100rem] bg-crem text-center  content-center justify-items-center h-[30rem] mb-10">
+    <section id="footer" className='h-[25rem]  max-w-[100rem] mx-auto  '>
+        <div className="mx-auto max-w-[100rem] bg-crem text-center  content-center justify-items-center h-[25rem] mb-10">
             <img src={Maskot} alt="maskot" className='w-[80px] justify-items-center mb-5 mt-5 ' />
             <h1 className='text-crem p-1 text-6xl font-bold bg-greenDark '>E M P O N <span className=' mr-1 bg-crem text-greenDark'> PEDIA</span></h1>
             <h2 className='text-xl text-greenDark mt-6 font-shadow-lg'>We're part of Information System.</h2>
