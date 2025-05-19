@@ -17,7 +17,7 @@ import Maskot from '../assets/maskot.png'
 function Landing () {
     return (
     <>
-    <div className="max-w-[95rem]">
+    <div className="max-w-[95rem] mx-auto">
         <Navs/>
     </div>
 
@@ -54,7 +54,7 @@ function Landing () {
             </h3>
         </div>
 
-        <div className="flex items-center justify-center mt-20 text-center bg-greenBold p-10 h-[20%] w-[75%] mx-auto gap-x-12 rounded-3xl">
+        <div className="flex items-center justify-center mt-20 text-center bg-greenDark p-10 h-[20%] w-[75%] mx-auto gap-x-12 rounded-3xl">
             <Card gambar={Panah} label={"Akurat"} deskripsi="Model AI kami dilatih dengan ribuan gambar empon-empon asli untuk memberikan hasil deteksi yang tepat dan andal."/>
             <Card gambar={Lampu} label={"Edukatif"} deskripsi="Dapatkan informasi lengkap tentang manfaat, penggunaan, dan fakta menarik dari empon-empon yang terdeteksi."/>
             <Card gambar={Check} label={"Mudah"} deskripsi="Cukup upload foto, dan AI kami akan langsung mengenali jenis empon-empon dengan kecepatan dan kemudahan maksimal."/>
@@ -62,7 +62,7 @@ function Landing () {
        
     </section>
 
-    <section id="quotes" className="bg-greenBold py-16 px-10 flex justify-center max-w-[100rem] mx-auto">
+    <section id="quotes" className="bg-greenDark py-16 px-10 flex justify-center max-w-[100rem] mx-auto">
         <div className="max-w-[100rem] w-full flex flex-col md:flex-row items-center gap-3">
             
             <div className="md:w-1/2 w-full flex justify-center">
@@ -74,18 +74,28 @@ function Landing () {
             </div>
 
             <div className="md:w-1/2 w-full text-black">
-            <h2 className="text-black text-5xl font-semibold mb-4">❝ Qoutes</h2>
-            <p className="text-2xl italic mb-4">
+            <h2 className=" text-5xl font-semibold mb-4 text-crem">❝ Qoutes</h2>
+            <p className="text-2xl italic mb-4 text-crem">
                 “Traditional herbal medicine, including rhizomes like turmeric and ginger, continues to be used by 
-                <span className="font-bold"> 80% of the world’s population </span>
+                <span className="font-bold text-crem "> 80% of the world’s population </span>
                 for primary health care.”
             </p>
-            <p className="text-black font-semibold italic">
+            <p className="text-crem font-semibold italic">
                 — WHO Traditional Medicine Strategy 2014–2023
             </p>
             </div>
 
         </div>
+    </section>
+
+    <section id="footer" className='h-[30rem]  max-w-[100rem] mx-auto  '>
+        <div className="mx-auto max-w-[100rem] bg-crem text-center  content-center justify-items-center h-[30rem] mb-10">
+            <img src={Maskot} alt="maskot" className='w-[80px] justify-items-center mb-5 mt-5 ' />
+            <h1 className='text-crem p-1 text-6xl font-bold bg-greenDark '>E M P O N <span className=' mr-1 bg-crem text-greenDark'> PEDIA</span></h1>
+            <h2 className='text-xl text-greenDark mt-6 font-shadow-lg'>We're part of Information System.</h2>
+            <h2 className='text-xl text-greenDark mb-10'>© Kelompok 2. 2025 EMPONPEDIA. All rights reserved.</h2>
+        </div>
+
     </section>
 
 

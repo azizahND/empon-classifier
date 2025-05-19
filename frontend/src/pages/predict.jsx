@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Header from '../layout/Header';
+import Navs from '../components/Navs';
 
 function Predict() {
   const [image, setImage] = useState(null);
@@ -32,6 +34,20 @@ function Predict() {
   };
 
   return (
+
+    <>
+    <div className="">
+      <Navs/>
+    </div>
+
+
+
+    <div className="">
+      <Header/>
+    </div>
+
+
+
     <div style={{ padding: 30 }}>
       <h1>Deteksi Empon-empon</h1>
       
@@ -54,6 +70,13 @@ function Predict() {
 
       {prediction && <h2>Hasil Deteksi: {prediction}</h2>}
     </div>
+    </>
+
+
+
+
+
+    
   );
 }
 
