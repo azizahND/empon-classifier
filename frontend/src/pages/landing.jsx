@@ -17,7 +17,7 @@ import Maskot from '../assets/maskot.png'
 function Landing () {
     return (
     <>
-    <div className="max-w-[100rem] mx-auto">
+    <div className="max-w-[95rem]">
         <Navs/>
     </div>
 
@@ -34,7 +34,7 @@ function Landing () {
     <div className="relative flex justify-center items-end mt-16">
         <img src={DaunAtas} alt="Daun" className="absolute top-[-300px] right-[0%] w-[450px]" />
         <img src={DaunAtas} alt="Daun" className="absolute top-[-300px] right-[0%] w-[450px]" />
-        <img src={Empon} alt="Empon" className="z-10 w-[650px]" />
+        <img src={Empon} alt="Empon" className="z-10 w-[680px]" />
         <img src={DaunBawah} alt="Daun" className="absolute bottom-[-80px] left-[0%] w-[450px]" />
         <img src={DaunBawah} alt="Daun" className="absolute bottom-[-80px] left-[0%] w-[450px]" />
 
@@ -46,15 +46,15 @@ function Landing () {
    
     </section>
 
-    <section id="reason" className=" max-w-[100rem] mx-auto mb-20"> 
-        <div className="text-center mt-20 mb-10 flex flex-row items-center justify-center">
+    <section id="reason" className=" max-w-[100rem] mx-auto pb-20  bg-whitemilk"> 
+        <div className="text-center pt-20 mb-10 flex flex-row items-center justify-center">
             <img src={Maskot} alt="maskot" className="w-[100px] mb-4" />
             <h3 className="text-6xl text-black font-bold">
                 Why <span className="text-greenDark underline ">EmponPedia?</span>
             </h3>
         </div>
 
-        <div className="flex items-center justify-center mt-20 text-center bg-greenDark p-10 h-[20%] w-[75%] mx-auto gap-x-12 rounded-3xl">
+        <div className="flex items-center justify-center mt-20 text-center bg-greenBold p-10 h-[20%] w-[75%] mx-auto gap-x-12 rounded-3xl">
             <Card gambar={Panah} label={"Akurat"} deskripsi="Model AI kami dilatih dengan ribuan gambar empon-empon asli untuk memberikan hasil deteksi yang tepat dan andal."/>
             <Card gambar={Lampu} label={"Edukatif"} deskripsi="Dapatkan informasi lengkap tentang manfaat, penggunaan, dan fakta menarik dari empon-empon yang terdeteksi."/>
             <Card gambar={Check} label={"Mudah"} deskripsi="Cukup upload foto, dan AI kami akan langsung mengenali jenis empon-empon dengan kecepatan dan kemudahan maksimal."/>
@@ -74,13 +74,13 @@ function Landing () {
             </div>
 
             <div className="md:w-1/2 w-full text-black">
-            <h2 className=" text-5xl font-semibold mb-4 text-crem">❝ Qoutes</h2>
-            <p className="text-2xl italic mb-4 text-crem">
+            <h2 className="text-black text-5xl font-semibold mb-4">❝ Qoutes</h2>
+            <p className="text-2xl italic mb-4">
                 “Traditional herbal medicine, including rhizomes like turmeric and ginger, continues to be used by 
-                <span className="font-bold text-crem "> 80% of the world’s population </span>
+                <span className="font-bold"> 80% of the world’s population </span>
                 for primary health care.”
             </p>
-            <p className="text-crem font-semibold italic">
+            <p className="text-black font-semibold italic">
                 — WHO Traditional Medicine Strategy 2014–2023
             </p>
             </div>
