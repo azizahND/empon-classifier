@@ -37,7 +37,7 @@ function Predict() {
   return (
 
     <>
-    <div className="">
+    <div className="mx-auto max-w-[100rem]">
       <Navs/>
     </div>
 

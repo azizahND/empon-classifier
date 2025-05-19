@@ -17,7 +17,7 @@ import Maskot from '../assets/maskot.png'
 function Landing () {
     return (
     <>
-    <div className="max-w-[95rem]">
+    <div className="max-w-[95rem] mx-auto">
         <Navs/>
     </div>
 
