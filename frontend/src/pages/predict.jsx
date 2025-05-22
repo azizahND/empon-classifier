@@ -7,7 +7,8 @@ import Button from '../components/Button';
 function Predict() {
   const [image, setImage] = useState(null);
   const [prediction, setPrediction] = useState('');
-  const [imagePreview, setImagePreview] = useState(null); 
+  const [description, setDescription] = useState('');
+  const [imagePreview, setImagePreview] = useState(null);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -15,7 +16,7 @@ function Predict() {
 
     const reader = new FileReader();
     reader.onloadend = () => {
-      setImagePreview(reader.result); 
+      setImagePreview(reader.result);
     };
     if (file) {
       reader.readAsDataURL(file);
@@ -29,62 +30,61 @@ function Predict() {
     try {
       const res = await axios.post('http://127.0.0.1:5000/predict', formData);
       setPrediction(res.data.prediction);
+      setDescription(res.data.description);
     } catch (err) {
       console.error(err);
     }
   };
 
   return (
-
     <>
-    <div className="mx-auto max-w-[100rem]">
-      <Navs/>
-    </div>
-
-
-
-    <div className="">
-      <Header/>
-    </div>
-
-    <div className="container mx-auto justify-items-center border-3 border-gray-200 ">
-      <div className="">
-
+      <div className="mx-auto max-w-[100rem]">
+        <Navs />
       </div>
-      <Button variant='brown' label="Pilih File"/>
-    </div>
 
+      <div>
+        <Header />
+      </div>
 
+      <div className="container mx-auto max-w-xl px-4 py-10 text-center bg-white shadow-md rounded-lg mt-8">
+        <h1 className="text-3xl font-bold text-green-800 mb-6">Deteksi Empon-Empon</h1>
 
-    <div style={{ padding: 30 }}>
-      <h1>Deteksi Empon-empon</h1>
-      
-      <input type="file" onChange={handleImageChange} />
-      
-      {imagePreview && (
-        <div style={{ marginTop: 20 }}>
-          <h3>Gambar yang diunggah:</h3>
-          <img 
-            src={imagePreview} 
-            alt="Preview" 
-            style={{ width: '100%', maxWidth: '400px', marginTop: 10 }}
+        <div className="mb-4">
+          <input 
+            type="file" 
+            onChange={handleImageChange}
+            className="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
           />
         </div>
-      )}
-      
-      <button onClick={handleSubmit} style={{ marginTop: 20 }}>
-        Kirim Gambar
-      </button>
 
-      {prediction && <h2>Hasil Deteksi: {prediction}</h2>}
-    </div>
+        {imagePreview && (
+          <div className="mb-6">
+            <h3 className="text-md font-medium mb-2">Gambar yang diunggah:</h3>
+            <img 
+              src={imagePreview} 
+              alt="Preview" 
+              className="mx-auto max-w-xs rounded-lg border"
+            />
+          </div>
+        )}
+
+        <button 
+          onClick={handleSubmit} 
+          className="bg-green-700 text-white px-6 py-2 rounded-lg hover:bg-green-800 transition"
+        >
+          Kirim Gambar
+        </button>
+
+        {prediction && (
+          <div className="mt-6 text-left">
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              Hasil Deteksi: <span className="text-green-700">{prediction}</span>
+            </h2>
+            <p className="text-gray-700 bg-gray-100 p-4 rounded-lg">{description}</p>
+          </div>
+        )}
+      </div>
     </>
-
-
-
-
-
-    
   );
 }
 
