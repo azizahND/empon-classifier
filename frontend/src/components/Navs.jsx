@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../assets/Group13.png';
 
 const Navs = () => {
-  const [active, setActive] = useState('Beranda');
+  const location = useLocation();
+  const currentPath = location.pathname;
+
   const menus = [
     { name: 'Beranda', link: '/' },
     { name: 'Deteksi', link: '/deteksi' },
@@ -10,26 +13,27 @@ const Navs = () => {
   ];
 
   return (
-    <div className="max-w-[100rem]  absolute top-0 w-full bg-transparent z-50 px-10">
+    <div className="max-w-[100rem] absolute top-0 w-full bg-transparent z-50 px-10">
       <nav className="flex items-center justify-between py-4 mr-10">
         <div className="mr-auto">
-          <img src={Logo} alt="Logo" className="h-15 w-auto" link= "/" />
+          <Link to="/">
+            <img src={Logo} alt="Logo" className="h-15 w-auto" />
+          </Link>
         </div>
 
         <div className="flex space-x-8">
           {menus.map((menu) => (
-            <a
+            <Link
               key={menu.name}
-              href={menu.link} 
-              onClick={() => setActive(menu.name)}
+              to={menu.link}
               className={`border-b-2 text-md transition duration-200
-                ${active === menu.name
+                ${currentPath === menu.link
                   ? 'border-orange-600 text-orange-700 font-bold'
                   : 'border-transparent text-black hover:text-orange-600'}
               `}
             >
               {menu.name}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>

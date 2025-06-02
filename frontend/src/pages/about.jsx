@@ -4,11 +4,13 @@ import Empon from "..//assets/empon.png";
 import Rempah from "..//assets/rempah.png";
 import Dela from "..//assets/dela.jpg";
 import Nisa from "..//assets/nisa.jpg";
-import Diva from "..//assets/diva.jpg";
+import Diva from "..//assets/divaa.jpg";
 import Jijah from "..//assets/jijah.jpg";
 import DaunBawah from '../assets/Group43.png';
 import DaunAtas from '../assets/Group44.png';
 import Faiz from '../assets/faiz.jpg';
+import Thaya from '../assets/thaya.jpg';
+
 
 
 function About() {
@@ -35,11 +37,11 @@ function About() {
         </div>
 
         <div className=" mt-10 grid  lg:grid-cols-3 gap-5 px-2 relative z-10 justify-items-center">
-          <CardProfile judul={"Najla Nadiva"} src={Diva} deskripsi={"2211521006"} />
+          <CardProfile judul={"Najla Nadiva"} src={Diva} deskripsi={"2211521006"}  />
           <CardProfile judul={"Annisa Nurul Hakim"} src={Nisa} deskripsi={"2211521007"} />
           <CardProfile judul={"Frizqya Dela Pratiwi"} src={Dela} deskripsi={"2211522003"} />
           <CardProfile judul={"Azizah Novi Delfianti"} src={Jijah} deskripsi={"2211522022"} />
-          <CardProfile judul={"Athaya Clara Diva"} src={Empon} deskripsi={"2211523009"} />
+          <CardProfile judul={"Athaya Clara Diva"} src={Thaya} deskripsi={"2211523009"} />
           <CardProfile judul={"Faiz Hadyan"} src={Faiz} deskripsi={"2211523023"} />
         </div>
       </div>

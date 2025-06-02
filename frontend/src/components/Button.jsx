@@ -10,7 +10,7 @@ const Button = ({
   ikon,
 }) => {
   const variantClasses = {
-    green: "bg-green text-white border-green hover:bg-white hover:text-green",
+    green: "bg-greenDark text-white border-greenDark hover:bg-white hover:text-greenDark",
     outline: "bg-transparent text-green border-green hover:bg-green hover:text-white",
     danger: "bg-red-600 text-white border-red-600 hover:bg-red-700",
     secondary: "bg-gray-200 text-black border-gray-300 hover:bg-gray-300",

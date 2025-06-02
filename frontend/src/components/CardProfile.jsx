@@ -6,7 +6,7 @@ const CardProfile = ({ judul, deskripsi, buttons = [], src }) => {
         alt="Card Image"
         className="w-full h-3/4 object-cover rounded-t-xl"
       />
-      <div className="p-4 md:p-5 text-center">
+      <div className="p-4 md:p-5 text-center pb-3">
         <h3 className="text-lg font-bold text-gray-800 text-3xl">{judul}</h3>
         <p className="mt-1 text-gray-500 text-xl pb-1">{deskripsi}</p>
       </div>
