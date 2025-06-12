@@ -64,6 +64,16 @@ function Predict() {
     }
   };
 
+  const handleReset = () => {
+  setImage(null);
+  setPrediction('');
+  setDescription('');
+  setImagePreview(null);
+  setRelatedImages([]);
+  setDetail([]);
+};
+
+
   useEffect(() => {
     if (prediction && imageFolders[prediction]) {
       const images = importAll(imageFolders[prediction]);
@@ -105,15 +115,18 @@ function Predict() {
           </div>
         )}
 
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center mt-10 gap-4">
           <Button 
             variant='green'
             onClick={handleSubmit} 
-            className="bg-green-700 flex text-white px-6 py-2 rounded-lg hover:bg-green-800 transition justify-items-center"
-          >
-            Deteksi
-          </Button>
+            label={"Deteksi"}
+          />
+          
         </div>
+          
+            
+         
+
 
         {prediction && (
           <div className="mt-6 text-left">
@@ -149,8 +162,18 @@ function Predict() {
                   className="rounded-lg border shadow-sm transform transition duration-300 hover:scale-105 hover:shadow-lg"
                 />
               ))}
+              
             </div>
+             <div className="flex justify-center mt-10 gap-4">
+          
+          <Button 
+            variant="oren"
+            onClick={handleReset}
+            label={"Prediksi Kembali"}
+          />
+        </div>
           </div>
+          
         )}
       </div>
     </>

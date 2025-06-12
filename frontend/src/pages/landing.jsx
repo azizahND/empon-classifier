@@ -10,11 +10,17 @@ import Lampu from '../assets/Group47.png'
 import Check from '../assets/Group46.png'
 import Rempah from '../assets/rempah.png'
 import Maskot from '../assets/maskot.png'
+import { useNavigate } from 'react-router-dom';
 
 
-
+ 
 
 function Landing () {
+    const navigate = useNavigate(); 
+
+  const handleClick = () => {
+    navigate('/deteksi');
+  };
     return (
     <>
     <div className="max-w-[95rem] mx-auto">
@@ -41,7 +47,7 @@ function Landing () {
     </div>
 
     <div className="flex justify-center mt-12 z-50 pb-20">
-        <Button label="Mulai Deteksi" variant='brown' className="animate-bounce" link='/deteksi'  />
+        <Button label="Mulai Deteksi" variant='brown' className="animate-bounce"  onClick={handleClick}  />
     </div>
    
     </section>
