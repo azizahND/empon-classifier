@@ -24,12 +24,12 @@ function About() {
         <img
           src={DaunAtas}
           alt="Daun Atas"
-          className="absolute top-0 right-0 w-[400px] z-0"
+          className="absolute top-0 right-0 w-[400px] z-0 animate-leaf"
         />
         <img
           src={DaunBawah}
           alt="Daun Bawah"
-          className="absolute bottom-0 left-0 w-[400px] z-0"
+          className="absolute bottom-0 left-0 w-[400px] z-0 animate-leaf"
         />
 
         <div className="mt-20 text-center relative z-10">

@@ -13,7 +13,7 @@ const Navs = () => {
   ];
 
   return (
-    <div className="max-w-[100rem] absolute top-0 w-full bg-transparent z-50 px-10">
+    <div className="fixed top-0 max-w-[100rem] absolute top-0 w-full bg-transparent z-50 px-10">
       <nav className="flex items-center justify-between py-4 mr-10">
         <div className="mr-auto">
           <Link to="/">
