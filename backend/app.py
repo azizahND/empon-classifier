@@ -13,7 +13,9 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-model = load_model('model/model_empon_classifier.h5')
+# model = load_model('model/model_empon_classifier.h5')
+model = load_model('model/best_empon_model.h5')
+
 
 label_map = {0: "Temulawak", 1: "Kencur", 2: "Lengkuas", 3: "Kunyit"}
 
@@ -72,10 +74,16 @@ plant_details = {
 }
 
 def preprocess_image(image_path):
+    """Memuat, resize, dan normalisasi gambar sebelum prediksi."""
+    if not os.path.exists(image_path):
+        raise FileNotFoundError(f"Gambar {image_path} tidak ditemukan.")
     image = Image.open(image_path).convert('RGB')
     image = image.resize((224, 224))
-    image = np.array(image) / 255.0
-    return image.reshape(1, 224, 224, 3)
+    image = np.array(image, dtype='float32') / 255.0
+    image = np.expand_dims(image, axis=0)  # (1, 224, 224, 3)
+
+    return image
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -90,21 +98,25 @@ def predict():
     file.save(file_path)
 
     try:
-        img_array = preprocess_image(file_path)
-        prediction = model.predict(img_array)[0]
-        predicted_class = np.argmax(prediction)
+        img_array = preprocess_image(file_path)  # pastikan ukuran dan rescaling sesuai
+        prediction = model.predict(img_array)[0]  # dapat array probabilitas
+        predicted_idx = np.argmax(prediction)    # indeks terbesar
+        confidence = prediction[predicted_idx]  # confidence dari indeks terbesar
     except Exception as e:
         return jsonify({'error': f'Prediction failed: {str(e)}'}), 500
 
-    if predicted_class not in label_map:
-        return jsonify({'prediction': 'Tidak dikenali'}), 200
-
-    label = label_map[predicted_class]
-    return jsonify({
-        'prediction': label,
-        'description': plant_info.get(label, "Deskripsi belum tersedia."),
-        'detail': plant_details.get(label, {})
+    # Jika confidence < 0.7, anggap Unknown
+    if confidence < 0.6:
+        return jsonify({'prediction': 'Unknown', 'description': 'Class not recognized'}), 200
+    
+    label = label_map[predicted_idx]
+    return jsonify({ 
+        'prediction': label, 
+        'confidence': float(confidence),
+        'description': plant_info.get(label, "Deskripsinya gak tersedia"),
+        'detail': plant_details.get(label, {}) 
     })
+
 
 if __name__ == '__main__':
     app.run(debug=True)
