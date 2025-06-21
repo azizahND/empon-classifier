@@ -1,4 +1,4 @@
-## 🚀 Fitur Utama Empon Classifier
+## 🚀 Empon Classifier
 
 Empon Classifier hadir sebagai solusi cerdas berbasis AI untuk mengenali jenis empon-empon hanya melalui gambar. Dengan desain antarmuka yang ramah pengguna dan performa model yang unggul, aplikasi ini mengusung sejumlah fitur utama yang menjadikannya menarik dan bermanfaat:
 
