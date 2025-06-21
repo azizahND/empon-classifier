@@ -1,6 +1,6 @@
-## 🚀 Empon Classifier
+## 🚀 EmponPedia
 
-Empon Classifier hadir sebagai solusi cerdas berbasis AI untuk mengenali jenis empon-empon hanya melalui gambar. Dengan desain antarmuka yang ramah pengguna dan performa model yang unggul, aplikasi ini mengusung sejumlah fitur utama yang menjadikannya menarik dan bermanfaat:
+EmponPedia hadir sebagai solusi cerdas berbasis AI untuk mengenali jenis empon-empon hanya melalui gambar. Dengan desain antarmuka yang ramah pengguna dan performa model yang unggul, aplikasi ini mengusung sejumlah fitur utama yang menjadikannya menarik dan bermanfaat:
 
 - **🔍 Klasifikasi Gambar Empon Secara Instan**  
   Pengguna cukup mengunggah gambar rempah seperti kunyit, kencur, temulawak, atau lengkuas, lalu sistem secara otomatis akan memprediksi jenis empon tersebut dalam hitungan detik.
